@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiUser, FiBriefcase, FiSettings, FiPhoneCall } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import Logo from "../assets/image/TFLEX-logo.svg";
+import Logo from '../assets/image/TFLEX-logo.svg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,10 +22,10 @@ const Header = () => {
   }, [prevScrollPos]);
 
   const navItems = [
-    { icon: <FiUser />, name: 'About', link: "#about-me" },
-    { icon: <FiBriefcase />, name: 'Likes', link: "#experience" },
-    { icon: <FiSettings />, name: 'Settings', link: "#projects" },
-    { icon: <FiPhoneCall />, name: 'Profile', link: "#contact" },
+    { name: 'About', link: "#about-me" },
+    { name: 'Likes', link: "#experience" },
+    { name: 'Settings', link: "#projects" },
+    { name: 'Profile', link: "#contact" },
   ];
 
   return (
@@ -41,15 +41,17 @@ const Header = () => {
             <div className="flex gap-4">
               {navItems.map((item, index) => (
                 <a key={item.name} href={item.link} className="block shrink-0 rounded-lg bg-white p-2.5 text-gray-600 shadow-lg hover:text-blue-600">
-                  <span className="sr-only">{item.name}</span>
-                  {item.icon}
+                  <span className="text-sm font-medium">{item.name}</span>
                 </a>))}
             </div>
           </div>
         </div>
+
       </div>
     </header>
+
   );
 };
+
 
 export default Header;

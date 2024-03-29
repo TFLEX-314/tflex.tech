@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import { Header, Footer } from "../components";
+import {About,Solution} from '../pages' 
 
 const MainRouter = () => {
   return (
@@ -8,7 +9,10 @@ const MainRouter = () => {
       <Header />
       <main className="flex-auto">
         <Outlet />
+      
       </main>
+      <About/>
+      <Solution/>
       <Footer />
     </>
   )
